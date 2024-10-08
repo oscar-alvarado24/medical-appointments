@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: "medical-appointments"
+  devtools:
+    add-properties: false
+  profiles:
+    include: local
+    active: local
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,prometheus"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+cors:
+  allowed-origins: "http://localhost:4200,http://localhost:8080"
